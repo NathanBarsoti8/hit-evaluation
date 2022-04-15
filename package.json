@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "initialUsage": "npm install && node swagger.js && node app.js",
-    "dev": "nodemon app.js",
+    "dev": "node swagger.js && nodemon app.js",
     "start": "node swagger.js && node app.js",
     "test": "node swagger.js && jest --coverage"
   },
