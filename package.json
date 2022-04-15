@@ -1,0 +1,41 @@
+{
+  "name": "hit-evaluation",
+  "version": "1.0.0",
+  "description": "API for registering soccer players and clubs",
+  "main": "app.js",
+  "scripts": {
+    "initialUsage": "npm install && node swagger.js && node app.js",
+    "dev": "nodemon app.js",
+    "start": "node swagger.js && node app.js",
+    "test": "node swagger.js && jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NathanBarsoti8/hit-evaluation.git"
+  },
+  "author": "Nathan Barsoti",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NathanBarsoti8/hit-evaluation/issues"
+  },
+  "homepage": "https://github.com/NathanBarsoti8/hit-evaluation#readme",
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.3",
+    "moment": "^2.29.2",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.3.5",
+    "swagger-autogen": "^2.20.6",
+    "swagger-ui-express": "^4.3.0",
+    "tedious": "^9.2.1"
+  },
+  "devDependencies": {
+    "jest": "^27.5.1",
+    "nodemon": "^2.0.15",
+    "sequelize-cli": "^6.2.0",
+    "supertest": "^6.2.2"
+  }
+}
