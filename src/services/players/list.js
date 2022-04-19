@@ -4,7 +4,7 @@ const repository = {
 
 module.exports = async (req, res) => {
     try {
-        const players = await repository.Clubs.findAll({
+        const players = await repository.Players.findAll({
             attributes: {
                 exclude: ['createdAt', 'updatedAt']
             },
