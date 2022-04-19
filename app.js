@@ -3,10 +3,11 @@ const path = require('path')
 const routes = require('./src/routes/index')
 
 const app = express()
-
 const env = process.env.NODE_ENV || "development"
 const envDir = path.join(__dirname, `./src/configs/env/${env}`)
-require(envDir)(app)
+const config = require(envDir)
+
+config(app)
 routes(app)
 
 app.listen(app.get('port'), () => {

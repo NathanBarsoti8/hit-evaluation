@@ -7,7 +7,7 @@
     "initialUsage": "npm install && node swagger.js && node app.js",
     "dev": "node swagger.js && nodemon app.js",
     "start": "node swagger.js && node app.js",
-    "test": "node swagger.js && jest --coverage"
+    "test": ""
   },
   "repository": {
     "type": "git",
