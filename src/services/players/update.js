@@ -7,6 +7,16 @@ const repository = {
 const MANDATORY_KEYS = ['clubId']
 
 module.exports = async (req, res) => {
+    /*  
+        #swagger.parameters['body'] = {
+            in: 'body',
+            description: '',
+            schema: {
+                $clubId: ''
+            }
+        }
+    */
+
     const { params, body } = req
     const missingKeys = checkIfHasMandatoryKeys(body, MANDATORY_KEYS)
 

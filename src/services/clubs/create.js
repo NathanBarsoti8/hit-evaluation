@@ -10,6 +10,19 @@ const MANDATORY_KEYS = ['name', 'openingDate', 'state']
 const DATE_FORMAT = "YYYY-MM-DD"
 
 module.exports = async (req, res) => {
+    /*  
+        #swagger.parameters['body'] = {
+                in: 'body',
+                description: '',
+                schema: {
+                    $name: 'Matonense',
+                    $openingDate: '1948-11-25',
+                    $state: 'SP',
+                    $players: []
+                }
+        }
+    */
+
     const { body } = req
     const missingKeys = checkIfHasMandatoryKeys(body, MANDATORY_KEYS)
 

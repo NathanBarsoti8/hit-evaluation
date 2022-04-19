@@ -36,7 +36,41 @@
       },
       "post": {
         "description": "",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "example": "Matonense"
+                },
+                "openingDate": {
+                  "type": "string",
+                  "example": "1948-11-25"
+                },
+                "state": {
+                  "type": "string",
+                  "example": "SP"
+                },
+                "players": {
+                  "type": "array",
+                  "example": [],
+                  "items": {}
+                }
+              },
+              "required": [
+                "name",
+                "openingDate",
+                "state",
+                "players"
+              ]
+            }
+          }
+        ],
         "responses": {
           "201": {
             "description": "Created"
@@ -68,7 +102,45 @@
       },
       "post": {
         "description": "",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "example": "Carlos Jr"
+                },
+                "position": {
+                  "type": "string",
+                  "example": "defender"
+                },
+                "height": {
+                  "type": "number",
+                  "example": 175
+                },
+                "weight": {
+                  "type": "number",
+                  "example": 70
+                },
+                "clubId": {
+                  "type": "string",
+                  "example": ""
+                }
+              },
+              "required": [
+                "name",
+                "position",
+                "height",
+                "weight",
+                "clubId"
+              ]
+            }
+          }
+        ],
         "responses": {
           "201": {
             "description": "Created"
@@ -91,6 +163,23 @@
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "clubId": {
+                  "type": "string",
+                  "example": ""
+                }
+              },
+              "required": [
+                "clubId"
+              ]
+            }
           }
         ],
         "responses": {

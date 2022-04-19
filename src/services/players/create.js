@@ -9,6 +9,20 @@ const VALID_POSITIONS = Object.values(POSITION_PLAYERS)
 const MANDATORY_KEYS = ['name', 'position', 'height', 'weight']
 
 module.exports = async (req, res) => {
+    /*  
+       #swagger.parameters['body'] = {
+               in: 'body',
+               description: '',
+               schema: {
+                   $name: 'Carlos Jr',
+                   $position: 'defender',
+                   $height: 175,
+                   $weight: 70,
+                   $clubId: ''
+               }
+       }
+   */
+
     const { body } = req
     const missingKeys = checkIfHasMandatoryKeys(body, MANDATORY_KEYS)
 
