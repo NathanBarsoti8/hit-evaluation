@@ -45,7 +45,10 @@ module.exports = async (req, res) => {
             })
         }
 
-        return res.status(201).json(club)
+        return res.status(201).json({
+            message: "Club successfully created",
+            data: club
+        })
     }
     catch (err) {
         return res.status(500).json({

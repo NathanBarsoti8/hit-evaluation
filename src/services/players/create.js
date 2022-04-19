@@ -50,7 +50,10 @@ module.exports = async (req, res) => {
             "clubId": clubId
         })
 
-        return res.status(201).json(player)
+        return res.status(201).json({
+            message: "Player successfully created",
+            data: player
+        })
     }
     catch (err) {
         return res.status(500).json({
