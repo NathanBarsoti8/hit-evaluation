@@ -1,7 +1,9 @@
 const { checkIfHasMandatoryKeys } = require('../../utils/functions/checkHasMandatoryKeys')
 const moment = require('moment')
+const { Op: op } = require('sequelize')
 const repository = {
-    Clubs: require('../../repositories/clubs')
+    Clubs: require('../../repositories/clubs'),
+    Players: require('../../repositories/players')
 }
 
 const MANDATORY_KEYS = ['name', 'openingDate', 'state']
@@ -30,6 +32,18 @@ module.exports = async (req, res) => {
             "openingDate": openingDate,
             "state": body.state
         })
+
+        if (body.players && body.players.length > 0) {
+            const playersIds = body.players.map(player => player.id).filter(player => player)
+
+            await repository.Players.update({
+                "clubId": club.id
+            }, {
+                where: {
+                    "id": { [op.in]: playersIds }
+                }
+            })
+        }
 
         return res.status(201).json(club)
     }
