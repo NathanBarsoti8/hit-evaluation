@@ -11,7 +11,7 @@ Clone o projeto
   git clone https://github.com/NathanBarsoti8/hit-evaluation.git
 ```
 
-Entre no diretório. Caso nunca tenha executado o projeto, rode o seguinte comando. Ele instalará todas as dependências necessárias e iniciará a API na porta 8080.
+Entre no diretório. Caso nunca tenha executado o projeto, rode o seguinte comando. Ele instalará todas as dependências necessárias e iniciará a API na porta 4444.
 
 ```bash
   npm run initialUsage 
@@ -24,6 +24,12 @@ Caso já tenho instalado as dependências anteriormente, rode o seguinte comando
 ```
 
 ## Endpoints
+
+Ao rodar a aplicação, basta acessar o swagger. Através dele teremos acesso aos endpoints da API.
+
+```bash
+  http://localhost:4444/swagger
+```
 
 Criação de jogadores e clubes
 
