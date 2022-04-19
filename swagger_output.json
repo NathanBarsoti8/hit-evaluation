@@ -26,6 +26,9 @@
           "200": {
             "description": "OK"
           },
+          "204": {
+            "description": "No Content"
+          },
           "500": {
             "description": "Internal Server Error"
           }
@@ -33,29 +36,7 @@
       },
       "post": {
         "description": "",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "name": {
-                  "example": "Coritiba"
-                },
-                "openingDate": {
-                  "example": "1988-05-15"
-                },
-                "state": {
-                  "example": "PR"
-                },
-                "players": {
-                  "example": []
-                }
-              }
-            }
-          }
-        ],
+        "parameters": [],
         "responses": {
           "201": {
             "description": "Created"
@@ -87,32 +68,7 @@
       },
       "post": {
         "description": "",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "name": {
-                  "example": "Nathan Barsoti"
-                },
-                "position": {
-                  "example": "defender"
-                },
-                "height": {
-                  "example": 164
-                },
-                "weight": {
-                  "example": 65
-                },
-                "clubId": {
-                  "example": 1
-                }
-              }
-            }
-          }
-        ],
+        "parameters": [],
         "responses": {
           "201": {
             "description": "Created"
@@ -135,18 +91,6 @@
             "in": "path",
             "required": true,
             "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "clubId": {
-                  "example": 1
-                }
-              }
-            }
           }
         ],
         "responses": {
