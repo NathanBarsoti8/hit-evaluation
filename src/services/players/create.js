@@ -30,17 +30,23 @@ module.exports = async (req, res) => {
         let clubId = null
         if (body.clubId) {
             const existClub = await repository.Clubs.findById(body.clubId)
-            
+
             if (existClub) {
                 clubId = existClub.id
             }
         }
 
+        const { isValid, errMessage, heightConverted } = convertToCm(body.height)
+
+        if (!isValid) {
+            return res.status(400).json({ message: errMessage })
+        }
+
         const player = await repository.Players.create({
             "name": body.name,
-            "position": body.position,
-            "height": "",
-            "weight": "",
+            "position": body.position.toUpperCase(),
+            "height": heightConverted,
+            "weight": body.weight,
             "clubId": clubId
         })
 
@@ -52,4 +58,29 @@ module.exports = async (req, res) => {
             stack: err.stack
         })
     }
+}
+
+function convertToCm(height) {
+    const response = {
+        "isValid": true,
+        "errMessage": null,
+        "heightConverted": height
+    }
+
+    if (typeof height === "string") {
+        response.heightConverted = heightString.replaceAll(",", "").replaceAll(".", "")
+    }
+    else if (typeof height === "number") {
+        const isInteger = Number.isInteger(height)
+
+        if (!isInteger) {
+            response.heightConverted = height * 100
+        }
+    }
+    else {
+        response.isValid = false
+        response.errMessage = "Invalid type of height. Must be number or string"
+    }
+
+    return response
 }
